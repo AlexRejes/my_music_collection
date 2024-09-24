@@ -6,6 +6,12 @@
 
 <br>
 
+<p>
+  <strong>Artist:</strong>
+  <%= @artists_hash[album.artist_id] || "Unknown Artist" %>
+</p>
+
+
 <div>
   <%= link_to "Back to albums", albums_path %>
 </div>

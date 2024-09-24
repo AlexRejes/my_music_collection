@@ -1,16 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Albums" %>
-
 <h1>Albums</h1>
 
-<div id="albums">
-  <% @albums.each do |album| %>
-    <%= render album %>
-    <p>
-      <%= link_to "Show this album", album %>
-    </p>
-  <% end %>
-</div>
+<% @albums.each do |album| %>
+  <p>
+    <strong>Name:</strong>
+    <%= album.name %>
+  </p>
+
+  <p>
+    <strong>Artist:</strong>
+    <%= @artists_hash[album.artist_id] || "Unknown Artist" %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= album.year %>
+  </p>
+
+  <%= link_to "Show this album", album_path(album) %>
+  <hr>
+<% end %>
 
 <%= link_to "New album", new_album_path %>

@@ -17,9 +17,11 @@
   </div>
 
   <div>
-    <%= form.label :artist_id, style: "display: block" %>
-    <%= form.number_field :artist_id %>
+    <%= form.label :artist_id, "Selecione o Artista", style: "display: block" %>
+    <%= form.select :artist_id, @artists_collection, { prompt: "Escolha um artista" }, class: "form-control" %>
   </div>
+
+
 
   <div>
     <%= form.label :year, style: "display: block" %>
