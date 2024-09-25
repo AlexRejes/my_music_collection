@@ -20,7 +20,9 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   def new
     @album = Album.new
+    fetch_artists_from_api # Garante que a lista de artistas será carregada para a select box
   end
+
 
   # GET /albums/1/edit
   def edit

@@ -1,17 +1,32 @@
-<% content_for :title, "New album" %>
+<%= form_with(model: @album) do |form| %>
+  <% if @album.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
 
-<h1>New album</h1>
+      <ul>
+        <% @album.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= render "form", album: @album %>
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
 
-<br>
+  <div>
+    <%= form.label :artist_id, "Selecione o Artista", style: "display: block" %>
+    <%= form.select :artist_id, @artists_collection, { prompt: "Escolha um artista" }, class: "form-control" %>
+  </div>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @artists_hash[album.artist_id] || "Unknown Artist" %>
-</p>
+  <div>
+    <%= form.label :year, style: "display: block" %>
+    <%= form.number_field :year %>
+  </div>
 
-
-<div>
-  <%= link_to "Back to albums", albums_path %>
-</div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
