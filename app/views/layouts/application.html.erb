@@ -14,10 +14,32 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <header>
+      <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #f8f9fa;">
+        <!-- Link para álbuns à esquerda -->
+        <div>
+          <%= link_to "Albums", albums_path, class: "btn btn-link" %>
+        </div>
+
+        <!-- Botão de logout e nome do usuário logado à direita -->
+        <div>
+          <% if user_signed_in? %>
+            <span style="margin-right: 10px;">
+              <strong><%= current_user.full_name %></strong>
+            </span>
+            <%= form_with url: destroy_user_session_path, method: :delete, local: true do %>
+              <%= submit_tag "Logout", class: "btn btn-link" %>
+            <% end %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-link" %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
     <%= yield %>
   </body>
 </html>
