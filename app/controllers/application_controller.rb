@@ -6,14 +6,14 @@ class ApplicationController < ActionController::Base
 
   # Permite parâmetros personalizados para login e cadastro
   def configure_permitted_parameters
-    # Permitir o uso do username no login
-    devise_parameter_sanitizer.permit(:sign_in, keys: [ :username ])
+    # Permitir o uso do username e email no login
+    devise_parameter_sanitizer.permit(:sign_in, keys: [ :username, :email ])
 
-    # Permitir os campos full_name, username e role durante o registro
-    devise_parameter_sanitizer.permit(:sign_up, keys: [ :full_name, :username, :role ])
+    # Permitir os campos full_name, username, email, role, password e password_confirmation durante o registro
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :full_name, :username, :email, :role, :password, :password_confirmation ])
 
-    # Permitir os campos full_name, username e role na edição do perfil
-    devise_parameter_sanitizer.permit(:account_update, keys: [ :full_name, :username, :role ])
+    # Permitir os campos full_name, username, email, role, password e password_confirmation na edição do perfil
+    devise_parameter_sanitizer.permit(:account_update, keys: [ :full_name, :username, :email, :role, :password, :password_confirmation ])
   end
 
   # Redireciona o usuário para a página de login após o registro

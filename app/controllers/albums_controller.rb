@@ -4,6 +4,17 @@ require "uri"
 class AlbumsController < ApplicationController
   before_action :set_album, only: %i[show edit update destroy]
   before_action :fetch_artists_from_api, only: %i[new edit]
+  before_action :verify_admin, only: [ :destroy ]
+
+
+
+  # Verifica se o usuário é admin antes de permitir deletar um álbum
+  def verify_admin
+    unless current_user&.admin?
+      redirect_to albums_path, alert: "Você não tem permissão para deletar álbuns."
+    end
+  end
+
 
   # GET /albums or /albums.json
   def index
