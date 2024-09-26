@@ -1,0 +1,72 @@
+/* Estilo do botão "New Album" */
+.album-header {
+    margin-bottom: 20px;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+
+.album-header .btn-primary {
+    background-color: #00ff00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.album-header .btn-primary:hover {
+    background-color: #00e600;
+}
+
+/* Estilo para a lista de álbuns */
+.album-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Estilo para cada box de álbum */
+.album-box {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: left;
+}
+
+/* Título do álbum */
+.album-box h3 {
+    color: #00ff00;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para as informações do álbum */
+.album-box p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.album-box strong {
+    color: #00ff00;
+}
+
+/* Botões dentro de cada álbum */
+.album-box .btn-secondary {
+    background-color: #000;
+    color: #00ff00;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.album-box .btn-secondary:hover {
+    background-color: #333;
+}

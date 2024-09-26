@@ -1,23 +1,23 @@
 <h1>Albums</h1>
 
-<% @albums.each do |album| %>
-  <p>
-    <strong>Name:</strong>
-    <%= album.name %>
-  </p>
+<!-- Botão de novo álbum -->
+<%= link_to "New album", new_album_path, class: "btn-primary" %>
 
-  <p>
-    <strong>Artist:</strong>
-    <%= @artists_hash[album.artist_id] || "Unknown Artist" %>
-  </p>
+<!-- Exibição dos álbuns -->
+<div class="albums-container">
+  <% @albums.each do |album| %>
+    <div class="album-box">
+      <!-- Título do álbum -->
+      <h3 class="album-title"><%= album.name %></h3>
 
-  <p>
-    <strong>Year:</strong>
-    <%= album.year %>
-  </p>
+      <!-- Nome do artista -->
+      <p class="album-detail"><strong>Artist Name:</strong> <%= @artists_hash[album.artist_id] || "Unknown Artist" %></p>
 
-  <%= link_to "Show this album", album_path(album) %>
-  <hr>
-<% end %>
+      <!-- Ano do álbum -->
+      <p class="album-detail"><strong>Year:</strong> <%= album.year %></p>
 
-<%= link_to "New album", new_album_path %>
+      <!-- Botão para exibir mais detalhes -->
+      <%= link_to "Show this album", album_path(album), class: "btn-show" %>
+    </div>
+  <% end %>
+</div>

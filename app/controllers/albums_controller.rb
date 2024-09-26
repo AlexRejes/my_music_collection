@@ -69,15 +69,15 @@ class AlbumsController < ApplicationController
     end
   end
 
-  # DELETE /albums/1 or /albums/1.json
   def destroy
-    @album.destroy!
-
+    @album = Album.find(params[:id])
+    @album.destroy
     respond_to do |format|
-      format.html { redirect_to albums_url, status: :see_other, notice: "Album was successfully destroyed." }
+      format.html { redirect_to albums_url, notice: "Album was successfully destroyed." }
       format.json { head :no_content }
     end
   end
+
 
   private
 

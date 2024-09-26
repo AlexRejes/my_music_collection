@@ -7,69 +7,12 @@
 }
 
 body {
-    padding-top: 80px; /* Ajuste o padding-top para garantir que o conteúdo não fique atrás da navbar */
-    background-color: #1c1c1c; /* Cinza escuro */
-    color: white;
-    min-height: 100vh;
-}
-
-/* Estilo da Navbar */
-.navbar {
-    background-color: #2a2a2a; /* Cor cinza escuro */
-    padding: 15px 20px;
-    position: fixed; /* Mantém a navbar fixa no topo */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Certifica-se de que a navbar fique acima de outros conteúdos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #1c1c1c; /* Cinza escuro */ 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    border-radius: 0 0 8px 8px; /* Borda arredondada na parte inferior */
-}
-
-/* Link da Navbar */
-.navbar a {
-    color: #00ff00; /* Verde neon */
-    text-decoration: none;
-    font-size: 16px;
-    margin-right: 20px;
-}
-
-.navbar a:hover {
-    color: #00e600;
-}
-
-/* Nome do usuário ao lado do botão de logout */
-.navbar .user-name {
-    color: #00ff00; /* Verde neon */
-    margin-right: 10px;
-    font-size: 14px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/* Botão de Logout */
-.navbar .btn-primary {
-    background-color: #00ff00;
-    color: #000;
-    padding: 8px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.navbar .btn-primary:hover {
-    background-color: #00e600;
-}
-
-/* Conteúdo principal */
-.main-content {
-    margin-top: 20px;
-    padding: 20px;
+    height: 100vh;
+    color: white;
 }
 
 /* Estilo da caixa de login */
@@ -112,7 +55,7 @@ body {
 }
 
 .login-input::placeholder {
-    color: #888;
+    color: #333;
 }
 
 /* Checkbox "Remember me" */
@@ -152,6 +95,8 @@ body {
     color: #000000; /* Preto */
     cursor: pointer;
     font-size: 16px;
+    margin-bottom: 15px; /* Adiciona espaço entre os botões */
+    text-decoration: none; /* Remove qualquer sublinhado */
 }
 
 .btn-primary:hover {
@@ -165,8 +110,14 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-left: 10px;
+    margin-top: 10px; /* Adiciona margem para descer o botão */
+    text-decoration: none; /* Remove qualquer sublinhado */
 }
+
+.btn-secondary:hover {
+    color: #00e600; /* Cor de hover no texto do botão secundário */
+}
+
 
 /* Texto de erro */
 .error-text {

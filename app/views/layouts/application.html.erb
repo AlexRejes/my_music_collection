@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "My Music Collection" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Estilos globais e específicos -->
+    <%= stylesheet_link_tag "albums_index", media: "all" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "custom", media: "all" %>
+    <%= stylesheet_link_tag "albums_edit", media: "all" %>
+    <%= stylesheet_link_tag "albums_show", media: "all" %>
+    <%= stylesheet_link_tag "new_album", media: "all" %>
+    <%= stylesheet_link_tag "registrations", media: "all" %>
+    
+    <!-- Metatags e outros -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <title><%= content_for(:title) || "My Music Collection" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
     <%= yield :head %>
 
+    <!-- Favicon e manifest -->
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <header>
-      <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #f8f9fa;">
-        <!-- Link para álbuns à esquerda -->
-        <div>
-          <%= link_to "Albums", albums_path, class: "btn btn-link" %>
-        </div>
+    <!-- Navbar ajustada -->
+    <nav class="navbar" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+      <div class="navbar-left">
+        <%= link_to "Albums", albums_path, class: "btn-primary" %>
+      </div>
 
-        <!-- Botão de logout e nome do usuário logado à direita -->
-        <div>
-          <% if user_signed_in? %>
-            <span style="margin-right: 10px;">
-              <strong><%= current_user.full_name %></strong>
-            </span>
-            <%= form_with url: destroy_user_session_path, method: :delete, local: true do %>
-              <%= submit_tag "Logout", class: "btn btn-link" %>
-            <% end %>
-          <% else %>
-            <%= link_to "Login", new_user_session_path, class: "btn btn-link" %>
+      <div class="navbar-right">
+        <% if user_signed_in? %>
+          <span class="user-name"><strong><%= current_user.full_name %></strong></span>
+          <%= form_with url: destroy_user_session_path, method: :delete, local: true do %>
+            <%= submit_tag "Logout", class: "btn-primary" %>
           <% end %>
-        </div>
-      </nav>
-    </header>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "btn-secondary" %>
+        <% end %>
+      </div>
+    </nav>
 
-    <%= yield %>
+    <!-- Adicionando margem para que o conteúdo não vá atrás da navbar -->
+    <div class="main-content" style="margin-top: 80px;">
+      <%= yield %>
+    </div>
+
+    <%= javascript_importmap_tags %>
   </body>
 </html>

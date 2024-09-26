@@ -1,32 +1,37 @@
-<h2>Log in</h2>
+<div class="login-box">
+  <h2 class="login-title">Log in</h2>
 
-<% if flash[:alert] %>
-  <div id="error_explanation" style="color: red;">
-    <p><%= flash[:alert] %></p>
-  </div>
-<% end %>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <% if flash[:alert] %>
+    <div class="error-text">
+      <p><%= flash[:alert] %></p>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <label class="login-label" for="username">Username</label>
+      <%= f.text_field :username, class: "login-input", autofocus: true, autocomplete: "username", placeholder: "Enter your username" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="form-group">
+      <label class="login-label" for="password">Password</label>
+      <%= f.password_field :password, class: "login-input", autocomplete: "current-password", placeholder: "Enter your password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="remember-me">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "btn-primary" %>
+      <%= link_to "Register", new_user_registration_path, class: "btn-secondary" %>
+    </div>
+  <% end %>
+
+  <div class="forgot-password">
+    <%= link_to "Forgot your password?", new_user_password_path %>
+  </div>
+</div>

@@ -1,12 +1,38 @@
 <% content_for :title, "Editing album" %>
 
-<h1>Editing album</h1>
+<div class="album-edit-box">
+  <h2>Edit Album</h2>
 
-<%= render "form", album: @album %>
+  <%= form_with(model: @album, local: true) do |form| %>
+    <% if @album.errors.any? %>
+      <div class="error-box">
+        <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+        <ul>
+          <% @album.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<br>
+    <div class="form-group">
+      <%= form.label :name, "Album Name", class: "form-label" %><br />
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
 
-<div>
-  <%= link_to "Show this album", @album %> |
-  <%= link_to "Back to albums", albums_path %>
+    <div class="form-group">
+      <%= form.label :artist_id, "Select Artist", class: "form-label" %><br />
+      <%= form.select :artist_id, @artists_collection, { prompt: "Choose an artist" }, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :year, "Year", class: "form-label" %><br />
+      <%= form.number_field :year, class: "form-control" %>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit "Update Album", class: "btn-primary" %>
+      <%= link_to "Cancel", album_path(@album), class: "btn-secondary" %>
+    </div>
+  <% end %>
 </div>

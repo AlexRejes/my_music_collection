@@ -1,0 +1,62 @@
+/* Container que segura todos os álbuns */
+.albums-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  /* Estilo geral para a lista de álbuns */
+  .album-list {
+    display: flex;
+    flex-wrap: wrap; /* Garante que as caixas se ajustem corretamente */
+    justify-content: flex-start; /* Alinha as caixas à esquerda */
+    gap: 20px; /* Espaçamento entre as caixas */
+  }
+  /* Estilo para cada álbum individual */
+  .album-box {
+    background-color: #2a2a2a; /* Cor de fundo da caixa */
+    border-radius: 12px; /* Cantos arredondados */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra da caixa */
+    width: 300px; /* Largura fixa para cada caixa */
+    min-height: 200px; /* Altura mínima para garantir uniformidade */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* Estilo para o botão dentro da caixa */
+  .album-box .btn-secondary {
+    margin-top: 10px;
+  }
+  /* Estilo do título do álbum */
+  .album-title {
+    font-size: 24px;
+    color: #00ff00; /* Cor verde neon */
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo dos detalhes (artista e ano) */
+  .album-detail {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  
+  /* Estilo do botão de exibição de mais detalhes */
+  .btn-show {
+    background-color: #00ff00; /* Botão principal verde neon */
+    color: #000;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  .btn-show:hover {
+    background-color: #00e600; /* Efeito hover */
+  }
+  

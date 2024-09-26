@@ -1,0 +1,92 @@
+/* Estilo da caixa de formulário para edição de álbuns */
+.album-edit-box {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto;
+    color: white;
+}
+
+/* Título da página de edição */
+.album-edit-box h2 {
+    font-size: 28px;
+    color: #00ff00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo dos campos do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00ff00;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-around; /* Espaça os botões de forma uniforme */
+    align-items: center; /* Alinha verticalmente os botões no centro */
+    gap: 10px; /* Adiciona espaçamento entre os botões */
+    margin-top: 20px;
+}
+
+.btn-container {
+    flex: 1;
+}
+
+.btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 10px;
+    text-align: center; /* Centraliza o texto */
+}
+
+.btn-primary {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #00e600;
+}
+
+.btn-secondary {
+    background-color: #000;
+    color: #00ff00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+/* Estilo de erro */
+.error-box {
+    color: red;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffcccc;
+    border-radius: 8px;
+}
