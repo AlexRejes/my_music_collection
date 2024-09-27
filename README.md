@@ -1,24 +1,33 @@
-# README
+My Music Collection
+My Music Collection is a web application built with Ruby on Rails that allows users to manage their personal music library. The app provides functionalities to register albums, organize them by artist, and display detailed information about each album.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features
+User registration and authentication
+Add, view, and manage albums
+Responsive and minimalist user interface
+Button alignment and navigation for improved usability
+Installation
+Clone this repository:
 
-Things you may want to cover:
+bash
+Copiar código
+git clone https://github.com/AlexRejes/my_music_collection.git
+Install dependencies:
 
-* Ruby version
+bash
+Copiar código
+bundle install
+Setup the database:
 
-* System dependencies
+bash
+Copiar código
+rails db:setup
+Start the server:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bash
+Copiar código
+rails server
+Technologies Used
+Ruby on Rails: Backend framework
+HTML/CSS: Frontend design
+PostgreSQL: Database
