@@ -3,7 +3,7 @@
 <div class="form-box">
   <%= form_with(model: @album, local: true) do |form| %>
 
-    <!-- Exibir erros, se houver -->
+    
     <% if @album.errors.any? %>
       <div style="color: red">
         <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
@@ -16,25 +16,25 @@
       </div>
     <% end %>
 
-    <!-- Campo para o nome do álbum -->
+    
     <div class="form-group">
       <%= form.label :name, "Album Name", class: "form-label" %><br />
       <%= form.text_field :name, class: "form-input" %>
     </div>
 
-    <!-- Select box para escolher o artista -->
+    
     <div class="form-group">
       <%= form.label :artist_id, "Select Artist", class: "form-label" %><br />
       <%= form.select :artist_id, @artists_collection, { prompt: "Choose an artist" }, class: "form-select" %>
     </div>
 
-    <!-- Campo para o ano do álbum -->
+    
     <div class="form-group">
       <%= form.label :year, "Year", class: "form-label" %><br />
       <%= form.number_field :year, class: "form-input" %>
     </div>
 
-    <!-- Botão de criar álbum -->
+    
     <div class="form-group">
       <%= form.submit "Create Album", class: "btn-primary" %>
     </div>

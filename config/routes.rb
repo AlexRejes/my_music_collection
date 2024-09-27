@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :artists
   resources :albums
 
-  # Definir a página inicial (root) para a página de álbuns
   root "albums#index"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

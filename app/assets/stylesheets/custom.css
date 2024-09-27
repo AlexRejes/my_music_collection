@@ -1,4 +1,4 @@
-/* Reset básico e configurações de fonte */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #1c1c1c; /* Cinza escuro */ 
+    background-color: #1c1c1c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,41 +15,41 @@ body {
     color: white;
 }
 
-/* Estilo da caixa de login */
+
 .login-box {
-    background-color: #2a2a2a; /* Mesma cor da caixa da página de registro */
-    border-radius: 12px; /* Ajustado para coincidir com a página de registro */
+    background-color: #2a2a2a; 
+    border-radius: 12px; 
     padding: 40px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra ajustada */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
     max-width: 400px;
     width: 100%;
     text-align: center;
 }
 
-/* Título da página de login */
+
 .login-title {
     font-size: 24px;
-    color: #00ff00; /* Cor verde neon como na página de registro */
-    margin-bottom: 20px; /* Ajustado para coincidir com a página de registro */
+    color: #00ff00; 
+    margin-bottom: 20px; 
 }
 
-/* Labels dos campos de login */
+
 .login-label {
     display: block;
-    color: #00ff00; /* Mesma cor das labels na página de registro */
-    margin-bottom: 8px; /* Ajustado para coincidir com a página de registro */
+    color: #00ff00; 
+    margin-bottom: 8px; 
     text-align: left;
 }
 
-/* Campos de entrada para username e password */
+
 .login-input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px; /* Ajustado para coincidir com a margem dos form-groups */
-    background-color: #333; /* Fundo cinza escuro como na página de registro */
-    border: 1px solid #333; /* Mesma borda da página de registro */
-    border-radius: 8px; /* Mesma borda arredondada */
-    color: #fff; /* Texto branco */
+    margin-bottom: 15px; 
+    background-color: #333; 
+    border: 1px solid #333; 
+    border-radius: 8px;
+    color: #fff;
     font-size: 14px;
     outline: none;
 }
@@ -58,16 +58,16 @@ body {
     color: #333;
 }
 
-/* Checkbox "Remember me" */
+
 .remember-me {
     display: flex;
     align-items: center;
-    margin-bottom: 15px; /* Ajustado para coincidir com o form-group */
+    margin-bottom: 15px;
 }
 
 .remember-me input[type="checkbox"] {
     appearance: none;
-    background-color: #333; /* Cinza escuro */
+    background-color: #333;
     border: none;
     width: 18px;
     height: 18px;
@@ -77,61 +77,61 @@ body {
 }
 
 .remember-me input[type="checkbox"]:checked {
-    background-color: #00ff00; /* Verde neon quando selecionado */
+    background-color: #00ff00; 
 }
 
 .remember-me label {
-    color: #00ff00; /* Mesma cor das labels */
+    color: #00ff00;
     font-size: 14px;
 }
 
-/* Botões de ação */
+
 .btn-primary {
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background-color: #00ff00; /* Botão principal verde neon */
-    color: #000000; /* Preto */
+    background-color: #00ff00; 
+    color: #000000;
     cursor: pointer;
     font-size: 16px;
-    margin-bottom: 15px; /* Adiciona espaço entre os botões */
-    text-decoration: none; /* Remove qualquer sublinhado */
+    margin-bottom: 15px; 
+    text-decoration: none; 
 }
 
 .btn-primary:hover {
-    background-color: #00e600; /* Efeito de hover */
+    background-color: #00e600;
 }
 
 .btn-secondary {
-    background-color: #000; /* Botão secundário preto */
-    color: #00ff00; /* Texto verde neon */
+    background-color: #000; 
+    color: #00ff00; 
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px; /* Adiciona margem para descer o botão */
-    text-decoration: none; /* Remove qualquer sublinhado */
+    margin-top: 10px; 
+    text-decoration: none; 
 }
 
 .btn-secondary:hover {
-    color: #00e600; /* Cor de hover no texto do botão secundário */
+    color: #00e600;
 }
 
 
-/* Texto de erro */
+
 .error-text {
     color: red;
     margin-bottom: 20px;
 }
 
-/* Link para "Forgot your password?" */
+
 .forgot-password {
     margin-top: 20px;
 }
 
 .forgot-password a {
-    color: #00ff00; /* Cor verde neon */
+    color: #00ff00; 
     text-decoration: none;
 }
 

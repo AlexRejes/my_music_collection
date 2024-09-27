@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #1c1c1c; /* Cinza escuro */
+    background-color: #1c1c1c; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@ body {
 }
 
 .register-container {
-    background-color: #2a2a2a; /* Cinza mais claro */
+    background-color: #2a2a2a; 
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -24,7 +24,7 @@ body {
 .register-form h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #00ff00; /* Verde neon */
+    color: #00ff00; 
 }
 
 .form-group {
@@ -34,7 +34,7 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #00ff00; /* Verde neon */
+    color: #00ff00; 
 }
 
 .form-group input {
@@ -56,14 +56,14 @@ body {
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background-color: #00ff00; /* Verde neon */
-    color: #000000; /* Preto */
+    background-color: #00ff00; 
+    color: #000000; 
     cursor: pointer;
     font-size: 16px;
 }
 
 .primary-btn:hover {
-    background-color: #00e600; /* Efeito de hover */
+    background-color: #00e600; 
 }
 
 p {
@@ -73,7 +73,7 @@ p {
 }
 
 .secondary-link {
-    color: #00ff00; /* Verde neon */
+    color: #00ff00; 
     text-decoration: none;
 }
 

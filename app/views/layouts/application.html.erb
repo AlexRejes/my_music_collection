@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Estilos globais e específicos -->
     <%= stylesheet_link_tag "albums_index", media: "all" %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "custom", media: "all" %>
@@ -9,8 +8,7 @@
     <%= stylesheet_link_tag "albums_show", media: "all" %>
     <%= stylesheet_link_tag "new_album", media: "all" %>
     <%= stylesheet_link_tag "registrations", media: "all" %>
-    
-    <!-- Metatags e outros -->
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,7 +18,6 @@
 
     <%= yield :head %>
 
-    <!-- Favicon e manifest -->
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -28,8 +25,7 @@
   </head>
 
   <body>
-    <!-- Navbar ajustada -->
-    <nav class="navbar" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+    <nav class="navbar">
       <div class="navbar-left">
         <%= link_to "Albums", albums_path, class: "btn-primary" %>
       </div>
@@ -46,8 +42,7 @@
       </div>
     </nav>
 
-    <!-- Adicionando margem para que o conteúdo não vá atrás da navbar -->
-    <div class="main-content" style="margin-top: 80px;">
+    <div class="main-content">
       <%= yield %>
     </div>
 

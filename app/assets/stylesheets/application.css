@@ -1,4 +1,4 @@
-/* Reset básico e configurações de fonte */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,31 +7,30 @@
 }
 
 body {
-    padding-top: 80px; /* Ajuste o padding-top para garantir que o conteúdo não fique atrás da navbar */
-    background-color: #1c1c1c; /* Cinza escuro */
+    background-color: #1c1c1c; 
     color: white;
     min-height: 100vh;
 }
 
-/* Estilo da Navbar */
+
 .navbar {
-    background-color: #2a2a2a; /* Cor cinza escuro */
+    background-color: #2a2a2a; 
     padding: 15px 20px;
-    position: fixed; /* Mantém a navbar fixa no topo */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Certifica-se de que a navbar fique acima de outros conteúdos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0 0 8px 8px; /* Borda arredondada na parte inferior */
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Link da Navbar */
+
 .navbar a {
-    color: #00ff00; /* Verde neon */
+    color: #00ff00; 
     text-decoration: none;
     font-size: 16px;
     margin-right: 20px;
@@ -41,16 +40,16 @@ body {
     color: #00e600;
 }
 
-/* Nome do usuário ao lado do botão de logout */
+
 .navbar .user-name {
-    color: #00ff00; /* Verde neon */
+    color: #00ff00;
     margin-right: 10px;
     font-size: 14px;
     display: inline-block;
     vertical-align: middle;
 }
 
-/* Botão de Logout */
+
 .navbar .btn-primary {
     background-color: #00ff00;
     color: #000;
@@ -66,47 +65,41 @@ body {
     background-color: #00e600;
 }
 
-/* Conteúdo principal */
-.main-content {
-    margin-top: 20px;
-    padding: 20px;
-}
 
-/* Estilo da caixa de login */
 .login-box {
-    background-color: #2a2a2a; /* Mesma cor da caixa da página de registro */
-    border-radius: 12px; /* Ajustado para coincidir com a página de registro */
+    background-color: #2a2a2a;
+    border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra ajustada */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 100%;
     text-align: center;
 }
 
-/* Título da página de login */
+
 .login-title {
     font-size: 24px;
-    color: #00ff00; /* Cor verde neon como na página de registro */
-    margin-bottom: 20px; /* Ajustado para coincidir com a página de registro */
+    color: #00ff00;
+    margin-bottom: 20px;
 }
 
-/* Labels dos campos de login */
+
 .login-label {
     display: block;
-    color: #00ff00; /* Mesma cor das labels na página de registro */
-    margin-bottom: 8px; /* Ajustado para coincidir com a página de registro */
+    color: #00ff00;
+    margin-bottom: 8px;
     text-align: left;
 }
 
-/* Campos de entrada para username e password */
+
 .login-input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px; /* Ajustado para coincidir com a margem dos form-groups */
-    background-color: #333; /* Fundo cinza escuro como na página de registro */
-    border: 1px solid #333; /* Mesma borda da página de registro */
-    border-radius: 8px; /* Mesma borda arredondada */
-    color: #fff; /* Texto branco */
+    margin-bottom: 15px;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
     font-size: 14px;
     outline: none;
 }
@@ -115,16 +108,16 @@ body {
     color: #888;
 }
 
-/* Checkbox "Remember me" */
+
 .remember-me {
     display: flex;
     align-items: center;
-    margin-bottom: 15px; /* Ajustado para coincidir com o form-group */
+    margin-bottom: 15px;
 }
 
 .remember-me input[type="checkbox"] {
     appearance: none;
-    background-color: #333; /* Cinza escuro */
+    background-color: #333;
     border: none;
     width: 18px;
     height: 18px;
@@ -134,33 +127,33 @@ body {
 }
 
 .remember-me input[type="checkbox"]:checked {
-    background-color: #00ff00; /* Verde neon quando selecionado */
+    background-color: #00ff00;
 }
 
 .remember-me label {
-    color: #00ff00; /* Mesma cor das labels */
+    color: #00ff00;
     font-size: 14px;
 }
 
-/* Botões de ação */
+
 .btn-primary {
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background-color: #00ff00; /* Botão principal verde neon */
-    color: #000000; /* Preto */
+    background-color: #00ff00;
+    color: #000;
     cursor: pointer;
     font-size: 16px;
 }
 
 .btn-primary:hover {
-    background-color: #00e600; /* Efeito de hover */
+    background-color: #00e600;
 }
 
 .btn-secondary {
-    background-color: #000; /* Botão secundário preto */
-    color: #00ff00; /* Texto verde neon */
+    background-color: #000;
+    color: #00ff00;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
@@ -168,19 +161,19 @@ body {
     margin-left: 10px;
 }
 
-/* Texto de erro */
+
 .error-text {
     color: red;
     margin-bottom: 20px;
 }
 
-/* Link para "Forgot your password?" */
+
 .forgot-password {
     margin-top: 20px;
 }
 
 .forgot-password a {
-    color: #00ff00; /* Cor verde neon */
+    color: #00ff00;
     text-decoration: none;
 }
 

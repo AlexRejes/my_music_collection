@@ -8,7 +8,7 @@ class AlbumsController < ApplicationController
 
 
 
-  # Verifica se o usuário é admin antes de permitir deletar um álbum
+
   def verify_admin
     unless current_user&.admin?
       redirect_to albums_path, alert: "Você não tem permissão para deletar álbuns."
@@ -16,30 +16,30 @@ class AlbumsController < ApplicationController
   end
 
 
-  # GET /albums or /albums.json
+
   def index
     @albums = Album.all
     @artists_hash = build_artists_hash
   end
 
-  # GET /albums/1 or /albums/1.json
+
   def show
     @artists_hash = build_artists_hash
     @artist_name = @artists_hash[@album.artist_id] || "Unknown Artist"
   end
 
-  # GET /albums/new
+
   def new
     @album = Album.new
-    fetch_artists_from_api # Garante que a lista de artistas será carregada para a select box
+    fetch_artists_from_api
   end
 
 
-  # GET /albums/1/edit
+
   def edit
   end
 
-  # POST /albums or /albums.json
+
   def create
     @album = Album.new(album_params)
 
@@ -48,21 +48,21 @@ class AlbumsController < ApplicationController
         format.html { redirect_to @album, notice: "Album was successfully created." }
         format.json { render :show, status: :created, location: @album }
       else
-        fetch_artists_from_api # Recarrega a lista de artistas em caso de erro
+        fetch_artists_from_api
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /albums/1 or /albums/1.json
+
   def update
     respond_to do |format|
       if @album.update(album_params)
         format.html { redirect_to @album, notice: "Album was successfully updated." }
         format.json { render :show, status: :ok, location: @album }
       else
-        fetch_artists_from_api # Recarrega a lista de artistas em caso de erro
+        fetch_artists_from_api
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
@@ -81,12 +81,12 @@ class AlbumsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_album
     @album = Album.find(params[:id])
   end
 
-  # Método para buscar o nome do artista pela API
+
   def fetch_artist_name_from_api(artist_id)
     return "Unknown Artist" if artist_id.nil?
 
@@ -99,13 +99,13 @@ class AlbumsController < ApplicationController
 
     if response.is_a?(Net::HTTPSuccess)
       artist_data = JSON.parse(response.body)
-      artist_data["name"] || "Unknown Artist" # Retorna o nome ou 'Unknown Artist' se não encontrado
+      artist_data["name"] || "Unknown Artist"
     else
-      "Unknown Artist" # Retorna 'Unknown Artist' se a API falhar
+      "Unknown Artist"
     end
   end
 
-  # Método para buscar a lista de artistas da API e construir um hash
+
   def build_artists_hash
     url = URI("https://europe-west1-madesimplegroup-151616.cloudfunctions.net/artists-api-controller")
     http = Net::HTTP.new(url.host, url.port)
@@ -124,12 +124,12 @@ class AlbumsController < ApplicationController
     end
   end
 
-  # Método para buscar a lista de artistas para os formulários
+
   def fetch_artists_from_api
     @artists_collection = build_artists_hash.map { |id, name| [ name, id ] }
   end
 
-  # Permitir apenas os parâmetros confiáveis.
+
   def album_params
     params.require(:album).permit(:name, :artist_id, :year)
   end

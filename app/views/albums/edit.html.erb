@@ -30,7 +30,8 @@
       <%= form.number_field :year, class: "form-control" %>
     </div>
 
-    <div class="form-actions">
+    <!-- Coloque ambos os botões dentro da mesma div -->
+    <div class="form-actions btn-container">
       <%= form.submit "Update Album", class: "btn-primary" %>
       <%= link_to "Cancel", album_path(@album), class: "btn-secondary" %>
     </div>

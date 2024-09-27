@@ -1,46 +1,33 @@
-/* Estilo para a caixa de detalhes do álbum */
-.album-box {
-    background-color: #2a2a2a;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 100%;
-    margin: 20px auto;
-    color: white;
-    text-align: left;
-}
 
-/* Título da página de detalhes do álbum */
-.album-title {
-    font-size: 28px;
-    color: #00ff00;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Estilo para os detalhes do álbum */
-.album-detail {
-    font-size: 16px;
-    color: #fff;
-    margin-left: 10px; /* Alinha os detalhes com um espaçamento */
-}
-
-/* Botões de ação */
 .action-buttons {
-    display: flex;
-    justify-content: space-between;
     margin-top: 20px;
 }
 
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
 .btn-primary, .btn-secondary, .btn-danger {
+    flex: 1;
+    height: 45px; 
+    width: 150px; 
+    padding: 0; 
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.btn-primary {
     background-color: #00ff00;
     color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
 }
 
 .btn-secondary {

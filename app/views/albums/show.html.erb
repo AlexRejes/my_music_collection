@@ -14,14 +14,15 @@
   </p>
 
   <div class="action-buttons">
-    <%= link_to "Back to Albums", albums_path, class: "btn-primary" %>
-    <%= link_to "Edit", edit_album_path(@album), class: "btn-secondary" %>
-
-    <!-- Substituindo o link "Delete" por um form_with para delete sem JS -->
-    <% if current_user.admin? %>
-      <%= form_with model: @album, url: album_path(@album), method: :delete, local: true do %>
-        <%= submit_tag "Delete", data: { confirm: "Are you sure?" }, class: "btn-danger" %>
+    <div class="button-group">
+      <%= link_to "Back to Albums", albums_path, class: "btn-primary" %>
+      <%= link_to "Edit", edit_album_path(@album), class: "btn-secondary" %>
+      
+      <% if current_user.admin? %>
+        <%= form_with model: @album, url: album_path(@album), method: :delete, local: true do %>
+          <%= submit_tag "Delete", data: { confirm: "Are you sure?" }, class: "btn-danger" %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
